@@ -1,9 +1,10 @@
+<!-- Nav Bar -->
 @model Form
 @{
     ViewData["Title"] = "Add Movie";
 }
 
-
+<!-- Form to add movie, the required columns are marked, and asp-for calls the variable from the model -->
 <title>Movie Form</title>
 <form method="post">
     <label asp-for="MovieName">Movie Name</label>

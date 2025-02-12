@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 namespace Mission6_Fowler.Models;
 
-public class MovieContext : DbContext
+public class MovieContext : DbContext // create the movie context model 
 {
     public MovieContext(DbContextOptions<MovieContext> options) : base(options)
     { }

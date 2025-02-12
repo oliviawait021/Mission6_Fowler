@@ -14,26 +14,26 @@ public class HomeController : Controller
         _context = someName;
     }
 
-    public IActionResult Index()
+    public IActionResult Index() // Index View
     {
         return View();
     }
 
-    public IActionResult KnowJoel()
+    public IActionResult KnowJoel() // Get to know Joel page
     {
         return View();
     }
     [HttpGet]
-    public IActionResult MovieForm()
+    public IActionResult MovieForm() // Get for the movie form page
     {
         return View();
     }
 
     [HttpPost]
-    public IActionResult MovieForm(Form response)
+    public IActionResult MovieForm(Form response) // post of the Movie form page
     {
         _context.Movies.Add(response);
-        _context.SaveChanges();
+        _context.SaveChanges(); // Save Changes in the database
         return View("Confirmation", response);
     }
 }

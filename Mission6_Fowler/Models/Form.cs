@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mission6_Fowler.Models;
 
-public class Form
+public class Form // create database format
 {
     [Key]
     [Required]
