@@ -249,3 +249,4 @@
 /Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/obj/Debug/net8.0/Mission6_Fowler.csproj.AssemblyReference.cache
 /Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/obj/Debug/net8.0/Mission6.DB483043.Up2Date
+/Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/obj/Debug/net8.0/Mission6_Fowler.sourcelink.json

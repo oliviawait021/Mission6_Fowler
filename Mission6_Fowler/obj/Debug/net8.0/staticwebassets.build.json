@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rz6Kwi6FL6qTpYk4KbIsp9EKf1GO0IHCVcymFG08dbI=",
+  "Hash": "+XW/yAQfMToBRJfMPNbKspd6+ZWuWoFuwHnsdW8URDA=",
   "Source": "Mission6_Fowler",
   "BasePath": "_content/Mission6_Fowler",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/wwwroot/img/BaconsaleKate.jpg",
+      "SourceId": "Mission6_Fowler",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/wwwroot/",
+      "BasePath": "_content/Mission6_Fowler",
+      "RelativePath": "img/BaconsaleKate.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/BaconsaleKate.jpg"
     },
     {
       "Identity": "/Users/oliviafowler/RiderProjects/Mission6_Fowler/Mission6_Fowler/wwwroot/img/JoelHiltonHeadshot.jpg",
