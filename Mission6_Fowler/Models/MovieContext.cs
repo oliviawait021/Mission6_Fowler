@@ -7,5 +7,5 @@ public class MovieContext : DbContext // create the movie context model
     { }
 
     public DbSet<Form> Movies { get; set; }
-    
+    public DbSet<Categories> Categories { get; set; }
 }

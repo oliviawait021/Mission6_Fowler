@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission6_Fowler.Models;
 using SQLitePCL;
 
@@ -26,14 +27,30 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult MovieForm() // Get for the movie form page
     {
-        return View();
+        ViewBag.Categories =  _context.Categories.ToList();
+        return View(new Form());
     }
 
     [HttpPost]
     public IActionResult MovieForm(Form response) // post of the Movie form page
     {
-        _context.Movies.Add(response);
-        _context.SaveChanges(); // Save Changes in the database
-        return View("Confirmation", response);
+        if (ModelState.IsValid)
+        {
+            _context.Movies.Add(response);
+            _context.SaveChanges(); 
+            return View("Confirmation", response);
+        }
+        else
+        {
+            ViewBag.Categories =  _context.Categories.ToList();
+            return View(response);
+        }
+    }
+    
+    public IActionResult MovieList()
+    {
+        var movies = _context.Movies.Include(x => x.Category).ToList();
+        
+        return View(movies);
     }
 }

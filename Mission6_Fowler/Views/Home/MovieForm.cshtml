@@ -7,11 +7,16 @@
 <!-- Form to add movie, the required columns are marked, and asp-for calls the variable from the model -->
 <title>Movie Form</title>
 <form method="post">
-    <label asp-for="MovieName">Movie Name</label>
-    <input asp-for="MovieName" required></input>
+    <label asp-for="Title">Movie Name</label>
+    <input asp-for="Title" required></input>
     <br/><br/>
-    <label asp-for="Category">Category</label>
-    <input asp-for="Category" required></input>
+    <label asp-for="CategoryId">Category</label>
+    <select asp-for="CategoryId">
+        @foreach (Categories m in ViewBag.Category)
+        {
+            <option value="@m.CategoryId">@m.CategoryName</option>
+        }
+    </select>
     <br/><br/>
     <label asp-for="Year">Year</label>
     <input asp-for="Year" required></input>
@@ -35,6 +40,12 @@
     <br/><br/>
     <label asp-for="LentTo">Lent To</label>
     <input asp-for="LentTo"/>
+    <br/><br/>
+    <label asp-for="CopiedToPlex">Copied to Plex</label><br/>
+    <input type="radio" asp-for="CopiedToPlex" value="true" id="copied-true"/>
+    <label for="copied-true">Yes</label>
+    <input type="radio" asp-for="CopiedToPlex" value="false" id="copied-false"/>
+    <label for="copied-false">No</label>
     <br/><br/>
     <label asp-for="Notes">Notes</label>
     <input asp-for="Notes" maxlength="25">
