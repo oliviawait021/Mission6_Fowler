@@ -1,0 +1,13 @@
+@model Form
+
+@{
+    ViewData["Title"] = "Delete Page";
+}
+<!-- Delete page with a button to confirm delete, if cancelled, send back to movie collection -->
+<h2>Confirm Deletion</h2>
+<h3>@Model.Title</h3>
+<form method="post">
+    <input type="hidden" asp-for="MovieId"/>
+    <button class=" btn btn-danger" type="submit">Delete</button>
+    <a class="btn btn-info" asp-controller="Home" asp-action="MovieCollection">Cancel</a>
+</form>

@@ -1,55 +1,102 @@
-<!-- Nav Bar -->
 @model Form
+
 @{
     ViewData["Title"] = "Add Movie";
 }
 
-<!-- Form to add movie, the required columns are marked, and asp-for calls the variable from the model -->
 <title>Movie Form</title>
-<form method="post">
-    <label asp-for="Title">Movie Name</label>
-    <input asp-for="Title" required></input>
-    <br/><br/>
-    <label asp-for="CategoryId">Category</label>
-    <select asp-for="CategoryId">
-        @foreach (Categories m in ViewBag.Category)
-        {
-            <option value="@m.CategoryId">@m.CategoryName</option>
-        }
-    </select>
-    <br/><br/>
-    <label asp-for="Year">Year</label>
-    <input asp-for="Year" required></input>
-    <br/><br/>
-    <label asp-for="Director">Director</label>
-    <input asp-for="Director" required></input>
-    <br/><br/>
-    <label asp-for="Rating">Rating</label>
-    <select asp-for="Rating">
-        <option value="G">G</option>
-        <option value="PG">PG</option>
-        <option value="13">PG-13</option>
-        <option value="R">R</option>
-    </select>
-    <br/><br/>
-    <label asp-for="Edited">Edited</label><br/>
-    <input type="radio" asp-for="Edited" value="true" id="edited-true"/>
-    <label for="edited-true">Yes</label>
-    <input type="radio" asp-for="Edited" value="false" id="edited-false"/>
-    <label for="edited-false">No</label>
-    <br/><br/>
-    <label asp-for="LentTo">Lent To</label>
-    <input asp-for="LentTo"/>
-    <br/><br/>
-    <label asp-for="CopiedToPlex">Copied to Plex</label><br/>
-    <input type="radio" asp-for="CopiedToPlex" value="true" id="copied-true"/>
-    <label for="copied-true">Yes</label>
-    <input type="radio" asp-for="CopiedToPlex" value="false" id="copied-false"/>
-    <label for="copied-false">No</label>
-    <br/><br/>
-    <label asp-for="Notes">Notes</label>
-    <input asp-for="Notes" maxlength="25">
-    <br/><br/>
-    <button type="submit">Add Movie</button>
-</form>
 
+<!-- Add a wrapper div with a class to center and style the form -->
+<div class="container d-flex justify-content-center mt-10">
+    <div class="card p-4 w-50">
+        <h1 class="text-center">Movie Information</h1>
+
+        <form method="post">
+            <!-- Movie Name -->
+            <div class="form-group">
+                <label asp-for="Title">Movie Name</label>
+                <input asp-for="Title" class="form-control w-auto" required>
+            </div>
+            <br>
+            <!-- Category -->
+            <div class="form-group">
+                <label asp-for="CategoryId">Category</label>
+                <select asp-for="CategoryId" class="form-control w-auto">
+                    @foreach (Categories c in ViewBag.Categories)
+                    {
+                        <option value="@c.CategoryId">@c.CategoryName</option>
+                    }
+                </select>
+            </div>
+            <br>
+            <!-- Year -->
+            <div class="form-group">
+                <label asp-for="Year">Year</label>
+                <input asp-for="Year" class="form-control w-auto" required>
+            </div>
+            <br>
+            <!-- Director -->
+            <div class="form-group">
+                <label asp-for="Director">Director</label>
+                <input asp-for="Director" class="form-control w-auto" required>
+            </div>
+            <br>
+            <!-- Rating -->
+            <div class="form-group">
+                <label asp-for="Rating">Rating</label>
+                <select asp-for="Rating" class="form-control w-auto">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="13">PG-13</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+            <br>
+            <!-- Edited -->
+            <div class="form-group">
+                <label asp-for="Edited">Edited</label><br/>
+                <div class="form-check form-check-inline">
+                    <input type="radio" asp-for="Edited" value="true" class="form-check-input" id="edited-true"/>
+                    <label for="edited-true" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" asp-for="Edited" value="false" class="form-check-input" id="edited-false"/>
+                    <label for="edited-false" class="form-check-label">No</label>
+                </div>
+            </div>
+            <br>
+            <!-- Lent To -->
+            <div class="form-group">
+                <label asp-for="LentTo">Lent To</label>
+                <input asp-for="LentTo" class="form-control w-auto"/>
+            </div>
+            <br>
+            <!-- Copied to Plex -->
+            <div class="form-group">
+                <label asp-for="CopiedToPlex">Copied to Plex</label><br/>
+                <div class="form-check form-check-inline">
+                    <input type="radio" asp-for="CopiedToPlex" value="true" class="form-check-input" id="copied-true"/>
+                    <label for="copied-true" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" asp-for="CopiedToPlex" value="false" class="form-check-input" id="copied-false"/>
+                    <label for="copied-false" class="form-check-label">No</label>
+                </div>
+            </div>
+            <br>
+            <!-- Notes -->
+            <div class="form-group">
+                <label asp-for="Notes">Notes</label>
+                <input asp-for="Notes" maxlength="25" class="form-control w-auto"/>
+            </div>
+            <br>
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </form>
+    </div>
+</div>

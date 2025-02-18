@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Movie List";
+}
+
+@model List<Form>
+
+<div class="container mt-5 d-flex justify-content-center">
+    <!-- Card wrapping the whole table -->
+    <div class="card w-100 p-4 border">
+        <h1 class="text-center mb-4">Movie Collection</h1>
+
+        <!-- Table inside card with responsive and bordered style -->
+        <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead class="fw-bold">
+            <tr>
+                <td>Movie Name</td>
+                <td>Category</td>
+                <td>Year</td>
+                <td>Director</td>
+                <td>Rating</td>
+                <td>Edited</td>
+                <td>Lent To</td>
+                <td>Copied to Plex</td>
+                <td>Notes</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+            </thead>
+
+            @foreach (var x in Model)
+            {
+                <tbody>
+                <tr>
+                    <td>@x.Title</td>
+                    <td>@x.Category.CategoryName</td>
+                    <td>@x.Year</td>
+                    <td>@x.Director</td>
+                    <td>@x.Rating</td>
+                    <td>@x.Edited</td>
+                    <td>@x.LentTo</td>
+                    <td>@x.CopiedToPlex</td>
+                    <td>@x.Notes</td>
+
+                    <!-- Edit and Delete buttons -->
+                    <td>
+                        <a class="btn btn-primary btn-sm me-2" asp-controller="home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" asp-controller="home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a>
+                    </td>
+                    
+                </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</div>
